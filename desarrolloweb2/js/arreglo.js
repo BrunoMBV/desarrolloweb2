@@ -87,58 +87,31 @@ for (let i = 0; i < carrito.length; i++) {
     console.log("--------------------");
 }*/
 
-let item={nombre:"leche",cantidad:1,precio:7.5};
 
-let carrito = [
-    {nombre: "leche", cantidad: 1,precio:7.5},
-    {nombre: "Carne", cantidad: 2,precio:14.5}, 
-    {nombre: "fideo", cantidad: 1,precio:6},
-    {nombre: "papa", cantidad: 3,precio:7}]   
-//imprimir item, cantidad ,precio total 
-console.log("item"+item.nombre);
-// Imprimir el nombre del artículo
-console.log("Nombre del artículo:", item.nombre);
+let carrito = [{ nombre: 'Leche', cantidad: 1, precio: 7.5 },
+    { nombre: 'Carne', cantidad: 2, precio: 30.5},
+    { nombre: 'Fideo', cantidad: 1, precio: 5.5},
+    { nombre: 'Papa', cantidad: 3, precio: 20.5}];
+item = { nombre: 'Arroz', cantidad: 2, precio: 30.5};
+carrito.push(item);
 
-// Imprimir la cantidad del artículo
-console.log("Cantidad:", item.cantidad);
+let carrito2 = [{ nombre: 'Leche', cantidad: 1, precio: 7.5 },
+    { nombre: 'Carne', cantidad: 2, precio: 30.5},
+    { nombre: 'Fideo', cantidad: 1, precio: 5.5},
+    { nombre: 'Papa', cantidad: 3, precio: 20.5}];
+item = { nombre: 'Arroz', cantidad: 2, precio: 30.5};
+carrito2.push(item);
+//Buscar funciones o procesos para ordenar un array
+//Ordenar el array de carrito
+//Ordenar un array lineal
+/*let numeros=[4,2,6,1,8,3,10];
+numeros.sort((a,b)=>a-b);
+console.log(numeros);
+*/
+console.log("IMPRESION ORDENADA POR PRECIO");
+carrito2.sort((x,y)=>x.precio - y.precio);
+console.log(carrito2);
 
-//imprimir precio totsl del articulo de acuerdo a la cantidad
-
-console.log("Carrito de compras actualizado:");
-for (let i = 0; i < carrito.length; i++) {
-    console.log("Nombre del producto: " + carrito[i].nombre);
-    console.log("Cantidad: " + carrito[i].cantidad);
-    console.log("Precio :" + carrito[i].precio*carrito[i].cantidad);
-    console.log("--------------------");
-}
-
-// Adición de un nuevo registro al carrito
-carrito.push({nombre: "manzana", cantidad: 5,precio:6});
-
-
-
-/// Calcular y imprimir el precio total del carrito
-let precioTotalCarrito = 0;
-for (let i = 0; i < carrito.length; i++) {
-    precioTotalCarrito += carrito[i].cantidad * carrito[i].precio;
-}
-console.log("Precio total del carrito:", precioTotalCarrito.toFixed(2));
-
-//buscar funciones o procesos para ordenar un array
-/// Ordenar el carrito por nombre del producto
-carrito.sort((a, b) => {//llamada al medoto (shot)array del carrito
-    if (a.nombre < b.nombre) {//si a es menor que b entonces a vair primero que a
-        return -1;
-    }
-    if (a.nombre > b.nombre) {//si b es menor que a entonces a vair primero que b
-        return 1;
-    }
-    return 0;// cuando a y b  sean iguales a 0 se mantendra el orden 
-});
-
-// Imprimir el carrito ordenado por nombre del producto
-console.log("Carrito de compras ordenado por nombre:");
-for (let i = 0; i < carrito.length; i++) {
-    console.log("Nombre del producto: " + carrito[i].nombre + ", Cantidad: " + carrito[i].cantidad + ", Precio total: " + (carrito[i].cantidad * carrito[i].precio).toFixed(2));
-}
-
+console.log("IMPRESION ORDENADA POR NOMBRE");
+carrito.sort((a,b)=>a.nombre.localeCompare(b.nombre));
+console.log(carrito);
